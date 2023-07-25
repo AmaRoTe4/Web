@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Redes from '../components/Redes.astro';
+import NavBar from '../components/NavBar.astro';
+import Proyectos from '../components/Proyectos.astro';
+import Tecnologias from '../components/Tecnologias.astro';
+---
+
+<Layout title="Amaro Cattarozzi">
+	<NavBar />
+	<main class="w-screen px-10 pt-20 min-h-[95vh] flex flex-col justify-between">
+		<span class="max-w-[80%] flex justify-center items-center">
+			<h1 class="text-[50px] w-full font-medium">
+				Hola! Soy Amaro <br> desarrollador web full stack.
+			</h1>
+		</span>
+		<div class="max-w-[100%] flex justify-end items-center">
+			<div>
+				<button type="button" id="btnMenos100vh" class="hover:cursor-pointer hover:scale-125 border border-black rounded-full h-[50px] w-[50px] p-3 flex justify-center items-center">
+					<img src="../../public/svg/arrowBottom.svg" class="h-[30px]" alt="flecha">
+				</button>
+			</div>
+			<span class="w-full flex justify-end">
+				<Redes />
+			</span>
+		</div>
+	</main>
+	<Proyectos />
+	<section class="w-screen px-10 py-5 flex">
+		<article>	
+			<h2 class="text-[30px] w-full font-medium">
+				Servidores y base de datos
+			</h2>
+			<h4>
+				He creado varios servidores con node.js, express, PHP y de gestión de archivos JSON, estos servidores han gestionado base de datos como MySQL, MongoDB y más, además de crear API Rest con estas. 
+			</h4>
+		</article>
+	</section>
+	<section class="w-screen px-10 py-5 flex">
+		<article>	
+			<h2 class="text-[30px] w-full font-medium">
+				Linux
+			</h2>
+			<h4>
+				Usuarios de Linux con más de un año de experiencia, uso avanzado de la terminal y habilidades sólidas en la gestión del sistema. 
+			</h4>
+		</article>
+	</section>
+	<Tecnologias />
+	<footer class="pt-[100px] pb-5 px-5 flex flex-col">
+		<div class="w-full flex items-center py-5">
+			<Redes />
+		</div>
+		<div class="w-full flex justify-center items-center">
+			<p>© Copyright Amaro Cattarozzi</p>
+		</div>
+	</footer>
+</Layout>
+
+<script is:inline>
+	const btnMenos100vh = document.querySelector("#btnMenos100vh")
+
+	function scrollTo100vh() {
+      const screenHeight = window.innerHeight;
+      window.scroll({
+        top: screenHeight - 22,
+        behavior: 'smooth' 
+      });
+    }
+
+	btnMenos100vh.addEventListener("click" , () => {
+		scrollTo100vh()
+	})
+</script>

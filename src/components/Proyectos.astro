@@ -1,0 +1,76 @@
+---
+import RenderProyectos from "./RenderProyectos.astro";
+---
+
+<section class="w-screen min-h-[100vh] py-16 px-5">
+  <span class="max-w-[80%] flex justify-center items-center">
+    <h2 class="text-[30px] w-full font-medium">Proyectos</h2>
+  </span>
+  <div class="w-full flex flex-wrap gap-5 py-2">
+    <RenderProyectos
+      titulo="Páginas web"
+      publicaciones={[
+        {
+          github: "https://github.com/AmaRoTe4/BusquedaDinamica",
+          titulo: "Busqueda dinamica.",
+          img: "../..//img/busquedaDinamica.jpg",
+        },
+        {
+          github: "https://github.com/AmaRoTe4/ReplicandoGmail",
+          titulo: "Replica de gmail.",
+          img: "../../public/img/CopyGmail.jpg",
+        },
+        {
+          github: "https://github.com/AmaRoTe4/codigo-web",
+          titulo: "Codigo de la web seven.",
+          img: "../../public/img/codigoDeLaWebSeven.jpg",
+        },
+        {
+          github: "https://github.com/AmaRoTe4/IFratelli",
+          titulo: "I Fratelli, delicias artesanales.",
+          img: "../../public/img/ifratelli.jpg",
+        },
+      ]}
+    />
+    <RenderProyectos
+      titulo="PHP"
+      publicaciones={[
+        {
+          github: "https://github.com/AmaRoTe4/PHPNotas",
+          titulo: "PHP Notas",
+          img: "../../public/img/phpNotas.jpg",
+        },
+      ]}
+    />
+    <RenderProyectos
+      titulo="C#"
+      publicaciones={[
+        {
+          github: "https://github.com/AmaRoTe4/ProyectoC-Bar",
+          titulo: "App de escritorio para bar.",
+          img: "../../public/img/CBar.jpg",
+        },
+      ]}
+    />
+    <RenderProyectos
+      titulo="Aplicaciones Web"
+      publicaciones={[
+        {
+          github: "https://github.com/AmaRoTe4/ProgramaComercial",
+          titulo: "Programa para pequeño local comercial.",
+          img: "../../public/img/localComercial.png",
+        },
+        {
+          github: "https://github.com/AmaRoTe4/GestionDeVentasBasicoRenovado",
+          titulo: "Gestor de venta para eventos.",
+          img: "../../public/img/ventaBasico.jpg",
+        },
+        {
+          github: "https://github.com/AmaRoTe4/VentaUTN",
+          titulo: "Gestor de pedidos de articulos, UTN Reconquista",
+          img: "../../public/img/ventaUTN.jpg",
+        },
+      ]}
+    />
+  </div>
+</section>
