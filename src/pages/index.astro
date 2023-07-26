@@ -8,16 +8,16 @@ import Tecnologias from '../components/Tecnologias.astro';
 
 <Layout title="Amaro Cattarozzi">
 	<NavBar />
-	<main class="w-screen px-10 pt-20 min-h-[95vh] flex flex-col justify-between">
-		<span class="max-w-[80%] flex justify-center items-center">
-			<h1 class="text-[50px] w-full font-medium">
-				Hola! Soy Amaro <br> desarrollador web full stack.
+	<main class="w-screen px-5 md:px-10 pt-20 min-h-[95vh] flex flex-col justify-between">
+		<span class="max-w-full md:max-w-[80%] flex justify-center items-center">
+			<h1 class="text-[30px] md:text-[50px] md:pt-[20px] w-full font-medium">
+				¡Hola! <br class="flex md:hidden"> Soy Amaro Cattarozzi <br class="hidden md:flex"> desarrollador web <br class="flex md:hidden"> full stack.
 			</h1>
 		</span>
-		<div class="max-w-[100%] flex justify-end items-center">
+		<div class="max-w-[100%] flex justify-end items-center gap-3">
 			<div>
 				<button type="button" id="btnMenos100vh" class="hover:cursor-pointer hover:scale-125 border border-black rounded-full h-[50px] w-[50px] p-3 flex justify-center items-center">
-					<img src="../../public/svg/arrowBottom.svg" class="h-[30px]" alt="flecha">
+					<img src="./src/svg/arrowBottom.svg" class="h-[30px]" alt="flecha">
 				</button>
 			</div>
 			<span class="w-full flex justify-end">
@@ -28,7 +28,7 @@ import Tecnologias from '../components/Tecnologias.astro';
 	<Proyectos />
 	<section class="w-screen px-10 py-5 flex">
 		<article>	
-			<h2 class="text-[30px] w-full font-medium">
+			<h2 class="text-[30px] w-full font-medium leading-8 md:leading-normal pb-2 md:pb-0">
 				Servidores y base de datos
 			</h2>
 			<h4>
@@ -47,12 +47,12 @@ import Tecnologias from '../components/Tecnologias.astro';
 		</article>
 	</section>
 	<Tecnologias />
-	<footer class="pt-[100px] pb-5 px-5 flex flex-col">
+	<footer class="pt-[100px] pb-10 md:pb-5 px-5 flex flex-col">
 		<div class="w-full flex items-center py-5">
 			<Redes />
 		</div>
-		<div class="w-full flex justify-center items-center">
-			<p>© Copyright Amaro Cattarozzi</p>
+		<div class="w-full pt-10 md:pt-0 flex justify-center items-center">
+			<p>©Copyright Amaro Cattarozzi</p>
 		</div>
 	</footer>
 </Layout>
@@ -63,7 +63,7 @@ import Tecnologias from '../components/Tecnologias.astro';
 	function scrollTo100vh() {
       const screenHeight = window.innerHeight;
       window.scroll({
-        top: screenHeight - 22,
+        top: screenHeight - 24,
         behavior: 'smooth' 
       });
     }

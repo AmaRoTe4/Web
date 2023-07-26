@@ -1,7 +1,141 @@
 ---
 ---
 
-<section>
-    Tecnologias
-    <img src="../../public/svg/c.svg" class="w-[50px]" alt="">
+<section class="w-screen px-10 py-5 flex flex-col gap-2">
+  <h2 class="text-[30px] w-full font-medium">Tecnologías</h2>
+  <article class="flex flex-wrap max-w-full gap-5">
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/html.svg"
+        class="w-[60px] p-1"
+        alt="HTML"
+        title="HTML"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/css.svg"
+        class="w-[60px] p-1"
+        alt="CSS"
+        title="CSS"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/tailwind.svg"
+        class="w-[60px] p-1"
+        alt="Tailwind"
+        title="Tailwind"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/javascript.svg"
+        class="w-[60px] p-1"
+        alt="JavaScript"
+        title="JavaScript"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/ts.svg"
+        class="w-[60px] p-1"
+        alt="TypeScript"
+        title="TypeScript"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/react.svg"
+        class="w-[60px] p-1"
+        alt="ReactJS"
+        title="ReactJS"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/vitejs.svg"
+        class="w-[60px] p-1"
+        alt="ViteJS"
+        title="ViteJS"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/nodejs.svg"
+        class="w-[60px] p-1"
+        alt="NodeJS"
+        title="NodeJS"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/php.svg"
+        class="w-[60px] p-1"
+        alt="PHP"
+        title="PHP"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/mysql.svg"
+        class="w-[60px] p-1"
+        alt="MySQL"
+        title="MySQL"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/mongodb.svg"
+        class="w-[60px] p-1"
+        alt="MongoDB"
+        title="MongoDB"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/c.svg"
+        class="w-[60px] p-1"
+        alt="C#"
+        title="C#"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/svg/git.svg"
+        class="w-[60px] p-1"
+        alt="Git"
+        title="Git"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="./src/img/linux.png"
+        class="w-[60px] p-1"
+        alt="Linux"
+        title="Linux"
+      />
+    </div>
+  </article>
 </section>
+
+<style>
+  img:hover::after {
+    content: attr(title);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  img:hover {
+    transform: scale(1.10);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 5px rgba(100, 100, 100, 0.5));
+  }
+</style>

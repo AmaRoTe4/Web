@@ -1,0 +1,26 @@
+<button
+  type="button"
+  id="btnCopy"
+  class="hover:opacity-80 hover:cursor-copy">
+  <img
+    src="./src/svg/copy.svg"
+    class="h-[30px]"
+    title="copy"
+    alt="copy"
+  />
+</button>
+
+<script>
+  const btnCopia = document.querySelector("#btnCopy") 
+  
+  const copy = () => {
+    navigator.clipboard
+      .writeText("543482650397")
+      .then(() => {})
+      .catch((error) => {
+        console.error("Error al copiar el texto:", error);
+      });
+  };
+
+  btnCopia.addEventListener("click" , copy)
+</script>

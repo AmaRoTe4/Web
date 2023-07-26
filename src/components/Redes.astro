@@ -1,6 +1,6 @@
----
----
+---import BtnCopy from "./btnCopy.astro";
 
+---
 <ul class="flex flex-col gap-2">
   <div class="flex gap-2">
     <li>
@@ -8,8 +8,9 @@
         target="_blank"
         href="https://www.facebook.com/amaro.cattarozzi">
         <img
-          src="../../public/svg/facebook.svg"
-          alt="facebook"
+          src="./src/svg/facebook.svg"
+          alt="Facebook"
+          title="Facebook"
           class="h-[30px] hover:scale-125"
         />
       </a>
@@ -19,8 +20,9 @@
         target="_blank"
         href="https://www.instagram.com/amaro_cattarozzi/">
         <img
-          src="../../public/svg/instagram.svg"
-          alt="instagram"
+          src="./src/svg/instagram.svg"
+          alt="Instagram"
+          title="Instagram"
           class="h-[30px] hover:scale-125"
         />
       </a>
@@ -30,8 +32,9 @@
         target="_blank"
         href="https://twitter.com/amarocattarozzi">
         <img
-          src="../../public/svg/twitter.svg"
-          alt="twitter"
+          src="./src/svg/twitter.svg"
+          alt="Twitter"
+          title="Twitter"
           class="h-[30px] hover:scale-125"
         />
       </a>
@@ -41,8 +44,9 @@
         target="_blank"
         href="https://www.linkedin.com/in/amaro-cattarozzi/">
         <img
-          src="../../public/svg/linkedin.svg"
-          alt="linkedin"
+          src="./src/svg/linkedin.svg"
+          alt="Linkedin"
+          title="Linkedin"
           class="h-[30px] hover:scale-125"
         />
       </a>
@@ -52,8 +56,9 @@
         target="_blank"
         href="https://github.com/AmaRoTe4">
         <img
-          src="../../public/svg/github.svg"
-          alt="github"
+          src="./src/svg/github.svg"
+          alt="GitHub"
+          title="GitHub"
           class="h-[30px] hover:scale-125"
         />
       </a>
@@ -63,14 +68,20 @@
         target="_blank"
         href="https://wa.me/qr/J2VPS5DLY726D1">
         <img
-          src="../../public/svg/whatsapp.svg"
-          alt="whatsapp"
+          src="./src/svg/whatsapp.svg"
+          alt="WhatsApp"
+          title="WhatsApp"
           class="h-[30px] hover:scale-125"
         />
       </a>
     </li>
   </div>
   <div class="flex justify-end">
-    <h5 class="text-">Teléfono: 54 3482-650397</h5>
+    <h5 class="font-medium w-full break-all">
+      Teléfono:
+      <br />
+      54 3482 650397
+    </h5>
+    <BtnCopy />
   </div>
 </ul>

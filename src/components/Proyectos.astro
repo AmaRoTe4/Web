@@ -12,23 +12,26 @@ import RenderProyectos from "./RenderProyectos.astro";
       publicaciones={[
         {
           github: "https://github.com/AmaRoTe4/BusquedaDinamica",
-          titulo: "Busqueda dinamica.",
-          img: "../..//img/busquedaDinamica.jpg",
+          titulo: "Búsqueda dinámica.",
+          img: "./src/img/busquedaDinamica.jpg",
+          web: "https://busqueda-dinamica.vercel.app/",
         },
         {
           github: "https://github.com/AmaRoTe4/ReplicandoGmail",
-          titulo: "Replica de gmail.",
-          img: "../../public/img/CopyGmail.jpg",
+          titulo: "Replica de Gmail.",
+          img: "./src/img/CopyGmail.jpg",
         },
         {
           github: "https://github.com/AmaRoTe4/codigo-web",
-          titulo: "Codigo de la web seven.",
-          img: "../../public/img/codigoDeLaWebSeven.jpg",
+          titulo: "Código de la web seven.",
+          img: "./src/img/codigoDeLaWebSeven.jpg",
+          web: "https://codigo-web-seven.vercel.app/",
         },
         {
           github: "https://github.com/AmaRoTe4/IFratelli",
           titulo: "I Fratelli, delicias artesanales.",
-          img: "../../public/img/ifratelli.jpg",
+          img: "./src/img/ifratelli.jpg",
+          web: "https://ifratellideliciasartesanales.com.ar/",
         },
       ]}
     />
@@ -38,7 +41,7 @@ import RenderProyectos from "./RenderProyectos.astro";
         {
           github: "https://github.com/AmaRoTe4/PHPNotas",
           titulo: "PHP Notas",
-          img: "../../public/img/phpNotas.jpg",
+          img: "./src/img/phpNotas.jpg",
         },
       ]}
     />
@@ -48,7 +51,7 @@ import RenderProyectos from "./RenderProyectos.astro";
         {
           github: "https://github.com/AmaRoTe4/ProyectoC-Bar",
           titulo: "App de escritorio para bar.",
-          img: "../../public/img/CBar.jpg",
+          img: "./src/img/CBar.jpg",
         },
       ]}
     />
@@ -58,19 +61,75 @@ import RenderProyectos from "./RenderProyectos.astro";
         {
           github: "https://github.com/AmaRoTe4/ProgramaComercial",
           titulo: "Programa para pequeño local comercial.",
-          img: "../../public/img/localComercial.png",
+          img: "./src/img/localComercial.png",
+          //web: "https://programa-comercial-prod.vercel.app/",
+          //codigoPrueba: ""
         },
         {
           github: "https://github.com/AmaRoTe4/GestionDeVentasBasicoRenovado",
           titulo: "Gestor de venta para eventos.",
-          img: "../../public/img/ventaBasico.jpg",
+          img: "./src/img/ventaBasico.jpg",
+          web: "https://gestion-de-ventas-basico-renovado.vercel.app/",
         },
         {
           github: "https://github.com/AmaRoTe4/VentaUTN",
-          titulo: "Gestor de pedidos de articulos, UTN Reconquista",
-          img: "../../public/img/ventaUTN.jpg",
+          titulo: "Gestor de pedidos de artículos, UTN Reconquista",
+          img: "./src/img/ventaUTN.jpg",
         },
       ]}
     />
   </div>
 </section>
+<script is:inline>
+const anchorPublicaciones = document.querySelectorAll(".anchorPublicacion");
+
+const removerAllStyles = (brother) => {
+  anchorPublicaciones.forEach((n) => {
+    let newBrother = n.previousElementSibling ?? undefined
+    if (brother?.id === newBrother.id) return;
+    
+    newBrother.classList.remove("moviminetoHover");
+    newBrother.classList.add("reverseMoviminetoHover");
+    setTimeout(() => {
+      newBrother.classList.remove("flex");
+      newBrother.classList.add("hidden");
+      newBrother.classList.remove("reverseMoviminetoHover");
+    }, 500);
+  });
+};
+
+anchorPublicaciones.forEach((element) => {
+  let timer = undefined;
+  let brother = element.previousElementSibling;
+
+  const enter = () => {
+    brother.classList.remove("hidden");
+    brother.classList.add("flex");
+    brother.classList.add("moviminetoHover");
+  };
+
+  const leave = () => {
+    brother.addEventListener("mouseleave", (e) => {
+      brother.classList.remove("moviminetoHover");
+      brother.classList.add("reverseMoviminetoHover");
+      setTimeout(() => {
+        brother.classList.remove("flex");
+        brother.classList.add("hidden");
+        brother.classList.remove("reverseMoviminetoHover");
+      }, 500);
+    });
+  };
+
+  element.addEventListener("mouseenter", (e) => {
+    removerAllStyles(brother);
+    timer = setTimeout(() => {
+      enter();
+    }, 200);
+  });
+  element.addEventListener("mouseleave", (e) => {
+    clearTimeout(timer);
+    leave();
+  });
+});
+
+</script>

@@ -11,12 +11,33 @@ const { titulo, publicaciones } = Astro.props;
   <h3 class="text-[22px] w-full px-1">{titulo}</h3>
   <ul class="p-1 flex flex-wrap gap-5">
     {
-      publicaciones.map(({ github, titulo, img }) => (
-        <a
-          class="hover:opacity-80 min-h-[220px] p-3 bg-black rounded-md"
-          href={github}
-          target="_blank">
-          <li class="flex flex-col justify-center items-center gap-1">
+      publicaciones.map(({ github, web , titulo, img }) => (
+        <div class="w-auto h-auto flex">
+          <span id={titulo} class="hidden flex-col justify-center items-center min-h-[220px] w-[330px] p-4 gap-4 bg-black rounded-md">
+              <a
+                href={github}
+                target="_blank"
+                class="hover:opacity-80 p-3 border border-white text-white text-[16px] flex items-center gap-2 w-[90%]">
+                <img
+                  src="./src/svg/githubWhite.svg"
+                  class="h-[25px]"
+                  alt="github"
+                />
+                Repositorio de GitHub
+              </a>
+              <a
+                href={web ?? "#"}
+                target="_blank"
+                class={`${web ? "hover:opacity-80" : "hover:cursor-default"} p-3 m-0 border border-white text-white text-[16px] flex items-center gap-2 w-[90%]`}>
+                <img
+                  src="./src/svg/internet.svg"
+                  class="h-[25px]"
+                  alt="github"
+                />
+                {web ? "Página desplegada" : "El proyecto no está desplegado en la web"}
+              </a>
+          </span>
+          <li class="anchorPublicacion min-h-[220px] p-2 bg-black rounded-md flex flex-col justify-center items-center gap-1">
             <div class="py-1 px-2">
               <h4 class="text-[16px] font-semibold text-white text-center w-full max-w-[300px] truncate">
                 {titulo}
@@ -30,8 +51,47 @@ const { titulo, publicaciones } = Astro.props;
               />
             </div>
           </li>
-        </a>
+        </div>
       ))
     }
   </ul>
 </article>
+<style>
+  .moviminetoHover {
+    display: flex;
+    position: absolute;
+    animation: slideRight 0.5s ease-in-out;
+  }
+
+  .reverseMoviminetoHover {
+    display: flex;
+    position: absolute;
+    animation: reverseSlideRight 0.5s ease-in-out;
+  }
+
+  @keyframes slideRight {
+    0% {
+      transform: translateX(-50%);
+      z-index: -10;
+      background-color: transparent;
+    }
+    100% {
+      transform: translateX(0%);
+      z-index: 10;
+      background-color: black;
+    }
+  }
+
+  @keyframes reverseSlideRight {
+    0% {
+      transform: translateX(0%);
+      z-index: 10;
+      background-color: black;
+    }
+    100% {
+      transform: translateX(50%);
+      z-index: -10;
+      background-color: transparent;
+    }
+  }
+</style>
