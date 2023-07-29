@@ -7,9 +7,9 @@ interface props {
 const { titulo, publicaciones } = Astro.props;
 ---
 
-<article class="p-1 min-w-full md:min-w-[25%] flex flex-col gap-1">
-  <h3 class="text-[22px] w-full px-1">{titulo}</h3>
-  <ul class="p-1 flex flex-wrap gap-5">
+<article class="p-1 min-w-full md:min-w-[25%] flex flex-col gap-1 items-center md:items-start">
+  <h3 class="text-[22px] w-[330px] md:w-full px-1">{titulo}</h3>
+  <ul class="w-[330px] md:w-auto p-1 flex flex-wrap gap-5 justify-center md:justify-start">
     {
       publicaciones.map(({ github, web , titulo, img }) => (
         <div class="w-auto h-auto flex">
